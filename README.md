@@ -200,7 +200,6 @@ O usa el botón de despliegue rápido:
 
 **Johan Javier Gonzalez Perez**
 
-- GitHub: [@JavierGonzalez045](https://github.com/JavierGonzalez045)
 - LinkedIn: [Johan Javier Gonzalez Perez](https://www.linkedin.com/in/johanjaviergonzalezperez/)
 - Instagram: [@javiergonzalez045](https://www.instagram.com/javiergonzalez045/)
 
