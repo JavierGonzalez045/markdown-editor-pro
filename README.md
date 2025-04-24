@@ -11,7 +11,7 @@
 
 <br />
 
-Editor de Markdown profesional con contador de palabras en tiempo real, autoguardado inteligente, previsualización instantánea y soporte multiidioma.
+Editor de Markdown, autoguardado inteligente, previsualización instantánea y soporte multiidioma.
 
 [🌟 Demo en Vivo](https://markdown-editor-jgp.vercel.app/) | [🚀 Características](#-características-principales) | [💻 Instalación](#-instalación)
 
