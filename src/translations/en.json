@@ -58,5 +58,30 @@
     "rejectAll": "Reject all",
     "manageOptions": "Manage options",
     "savePreferences": "Save preferences"
+  },
+  "toolbar": {
+    "title": "Formatting Tools",
+    "info": "Press the tool to insert the format in the editor",
+    "groups": {
+      "headings": "Headings",
+      "formatting": "Formatting",
+      "links": "Links",
+      "lists": "Lists",
+      "others": "Others"
+    },
+    "tools": {
+      "bold": "Bold",
+      "italic": "Italic",
+      "strikethrough": "Strikethrough",
+      "code": "Code",
+      "link": "Link",
+      "image": "Image",
+      "list": "List",
+      "orderedList": "Ordered",
+      "taskList": "Tasks",
+      "quote": "Quote",
+      "table": "Table",
+      "horizontalRule": "Line"
+    }
   }
 }

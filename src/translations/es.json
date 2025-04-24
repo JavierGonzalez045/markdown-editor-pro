@@ -58,5 +58,30 @@
     "rejectAll": "Rechazar todo",
     "manageOptions": "Gestionar opciones",
     "savePreferences": "Guardar preferencias"
+  },
+  "toolbar": {
+    "title": "Herramientas de Formato",
+    "info": "Presiona la herramienta para insertar el formato en el editor",
+    "groups": {
+      "headings": "Encabezados",
+      "formatting": "Formato",
+      "links": "Enlaces",
+      "lists": "Listas",
+      "others": "Otros"
+    },
+    "tools": {
+      "bold": "Negrita",
+      "italic": "Cursiva",
+      "strikethrough": "Tachado",
+      "code": "Código",
+      "link": "Enlace",
+      "image": "Imagen",
+      "list": "Lista",
+      "orderedList": "Numerada",
+      "taskList": "Tareas",
+      "quote": "Cita",
+      "table": "Tabla",
+      "horizontalRule": "Línea"
+    }
   }
 }
