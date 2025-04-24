@@ -55,7 +55,7 @@ export default function Footer({ content, isZen }) {
               {
                 icon: Github,
                 label: "GitHub",
-                href: "https://github.com/JavierGonzalez045",
+                href: "https://github.com/JavierGonzalez045/markdown-editor-pro",
               },
               {
                 icon: Linkedin,
