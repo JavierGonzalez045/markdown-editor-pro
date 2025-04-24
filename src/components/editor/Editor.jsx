@@ -20,6 +20,7 @@ import {
   Minus,
   HelpCircle,
   X,
+  Wrench,
 } from "lucide-react";
 import LineNumbers from "./LineNumbers";
 import { useTranslation } from "react-i18next";
@@ -46,6 +47,17 @@ const Editor = ({
   const lineNumbersRef = useRef(null);
   const { t } = useTranslation();
   const [showShortcuts, setShowShortcuts] = useState(false);
+  const [showMobileTools, setShowMobileTools] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Sincronizo el scroll entre el textarea y los números de línea
   const handleScroll = (e) => {
@@ -262,33 +274,18 @@ const Editor = ({
               {t("editor.title")} - Modo Zen
             </span>
           </div>
-          <div className="flex items-center space-x-4">
-            <AutosaveStatus isSaving={isSaving} lastSaved={lastSaved} />
+
+          {isMobile ? (
             <div className="flex items-center space-x-2">
-              <div className="flex items-center space-x-1 overflow-x-auto scrollbar-hide">
-                {toolbarButtons.map(({ icon: Icon, action, title }) => (
-                  <motion.button
-                    key={title}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    onClick={action}
-                    className="p-1 md:p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"
-                    title={title}
-                  >
-                    <Icon className="h-3 w-3 md:h-4 md:w-4" />
-                  </motion.button>
-                ))}
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  onClick={() => setShowShortcuts(!showShortcuts)}
-                  className="p-1 md:p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"
-                  title="Atajos de teclado"
-                >
-                  <HelpCircle className="h-3 w-3 md:h-4 md:w-4" />
-                </motion.button>
-              </div>
-              <ThemeToggle />
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setShowMobileTools(!showMobileTools)}
+                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-600 dark:text-gray-400"
+                title="Herramientas"
+              >
+                <Wrench className="h-5 w-5" />
+              </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -299,7 +296,47 @@ const Editor = ({
                 <X className="h-5 w-5" />
               </motion.button>
             </div>
-          </div>
+          ) : (
+            <div className="flex items-center space-x-4">
+              <AutosaveStatus isSaving={isSaving} lastSaved={lastSaved} />
+              <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-1 overflow-x-auto scrollbar-hide">
+                  {toolbarButtons.map(({ icon: Icon, action, title }) => (
+                    <motion.button
+                      key={title}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      onClick={action}
+                      className="p-1 md:p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"
+                      title={title}
+                    >
+                      <Icon className="h-3 w-3 md:h-4 md:w-4" />
+                    </motion.button>
+                  ))}
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={() => setShowShortcuts(!showShortcuts)}
+                    className="p-1 md:p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"
+                    title="Atajos de teclado"
+                  >
+                    <HelpCircle className="h-3 w-3 md:h-4 md:w-4" />
+                  </motion.button>
+                </div>
+                <ThemeToggle />
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={onExitZen}
+                  className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-600 dark:text-gray-400"
+                  title="Salir del modo Zen"
+                >
+                  <X className="h-5 w-5" />
+                </motion.button>
+              </div>
+            </div>
+          )}
+
           <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
         </div>
       ) : (
@@ -335,6 +372,38 @@ const Editor = ({
           </div>
           <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
         </div>
+      )}
+
+      {/* Panel móvil de herramientas en modo Zen */}
+      {isZen && isMobile && showMobileTools && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="absolute top-14 left-0 right-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 p-4 z-20"
+        >
+          <div className="flex items-center justify-between mb-4">
+            <AutosaveStatus isSaving={isSaving} lastSaved={lastSaved} small />
+            <ThemeToggle />
+          </div>
+          <div className="grid grid-cols-4 gap-2">
+            {toolbarButtons.slice(0, 8).map(({ icon: Icon, action, title }) => (
+              <motion.button
+                key={title}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => {
+                  action();
+                  setShowMobileTools(false);
+                }}
+                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-600 dark:text-gray-400"
+                title={title}
+              >
+                <Icon className="h-5 w-5" />
+              </motion.button>
+            ))}
+          </div>
+        </motion.div>
       )}
 
       {showShortcuts && (
