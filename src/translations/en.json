@@ -1,0 +1,62 @@
+{
+  "header": {
+    "title": "MarkEditor Pro",
+    "clear": "Clear",
+    "download": "Download",
+    "clearConfirm": "Are you sure you want to clear all content?"
+  },
+  "editor": {
+    "title": "Editor",
+    "placeholder": "Write your markdown here..."
+  },
+  "preview": {
+    "title": "Preview"
+  },
+  "footer": {
+    "developedBy": "Developed by",
+    "rights": "All rights reserved"
+  },
+  "meta": {
+    "title": "MarkEditor Pro",
+    "description": "Markdown editor for long documents with modern and attractive interface"
+  },
+  "stats": {
+    "words": "Words",
+    "characters": "Characters",
+    "lines": "Lines"
+  },
+  "autosave": {
+    "saving": "Saving",
+    "saved": "Saved",
+    "error": "Error",
+    "savedAt": "Autosaved at",
+    "autoSaveInfo": "Autosaves as you type"
+  },
+  "zenMode": {
+    "enter": "Enter zen mode",
+    "exit": "Exit zen mode"
+  },
+  "modal": {
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "download": {
+    "success": "Download completed!"
+  },
+  "consent": {
+    "title": "Your privacy is important to us",
+    "description": "We use cookies and similar technologies to improve your experience. Some cookies are necessary for the site to function, while others help us understand how you use our service to improve your experience.",
+    "necessary": "Necessary",
+    "necessaryDesc": "Essential cookies for site functionality",
+    "functionality": "Functional",
+    "functionalityDesc": "Cookies for enhanced features",
+    "analytics": "Analytics",
+    "analyticsDesc": "Cookies for analysis and service improvement",
+    "advertising": "Advertising",
+    "advertisingDesc": "Cookies for personalized advertising",
+    "acceptAll": "Accept all",
+    "rejectAll": "Reject all",
+    "manageOptions": "Manage options",
+    "savePreferences": "Save preferences"
+  }
+}

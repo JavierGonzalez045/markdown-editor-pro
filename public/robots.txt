@@ -1,0 +1,11 @@
+# robots.txt for MarkEditor Pro
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://markdown-editor-jgp.com/sitemap.xml
+
+# Block access to admin areas if any
+Disallow: /api/
+Disallow: /_next/

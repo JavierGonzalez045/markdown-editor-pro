@@ -1,0 +1,24 @@
+<!-- @license lucide-static v0.503.0 - ISC -->
+<svg
+  class="lucide lucide-smartphone"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+ 
+ 
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ fill="none" stroke="url(#icon-gradient)">
+
+  <defs>
+    <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+  <path d="M12 18h.01" />
+</svg>

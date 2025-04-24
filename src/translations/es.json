@@ -1,0 +1,62 @@
+{
+  "header": {
+    "title": "MarkEditor Pro",
+    "clear": "Limpiar",
+    "download": "Descargar",
+    "clearConfirm": "¿Estás seguro de que deseas limpiar todo el contenido?"
+  },
+  "editor": {
+    "title": "Editor",
+    "placeholder": "Escribe tu markdown aquí..."
+  },
+  "preview": {
+    "title": "Vista Previa"
+  },
+  "footer": {
+    "developedBy": "Desarrollado por",
+    "rights": "Todos los derechos reservados"
+  },
+  "meta": {
+    "title": "MarkEditor Pro",
+    "description": "Editor de Markdown para documentos largos, con interfaz moderna y atractiva"
+  },
+  "stats": {
+    "words": "Palabras",
+    "characters": "Caracteres",
+    "lines": "Líneas"
+  },
+  "autosave": {
+    "saving": "Guardando",
+    "saved": "Guardado",
+    "error": "Error",
+    "savedAt": "Guardado automáticamente a las",
+    "autoSaveInfo": "Se guarda automáticamente mientras escribes"
+  },
+  "zenMode": {
+    "enter": "Entrar al modo zen",
+    "exit": "Salir del modo zen"
+  },
+  "modal": {
+    "cancel": "Cancelar",
+    "confirm": "Confirmar"
+  },
+  "download": {
+    "success": "¡Descarga completada!"
+  },
+  "consent": {
+    "title": "Su privacidad es importante para nosotros",
+    "description": "Utilizamos cookies y tecnologías similares para mejorar su experiencia. Algunas cookies son necesarias para el funcionamiento del sitio, mientras que otras nos ayudan a entender cómo utiliza nuestro servicio para mejorar su experiencia.",
+    "necessary": "Necesarias",
+    "necessaryDesc": "Cookies esenciales para el funcionamiento del sitio",
+    "functionality": "Funcionales",
+    "functionalityDesc": "Cookies para funcionalidades mejoradas",
+    "analytics": "Analíticas",
+    "analyticsDesc": "Cookies para análisis y mejora del servicio",
+    "advertising": "Publicidad",
+    "advertisingDesc": "Cookies para publicidad personalizada",
+    "acceptAll": "Aceptar todo",
+    "rejectAll": "Rechazar todo",
+    "manageOptions": "Gestionar opciones",
+    "savePreferences": "Guardar preferencias"
+  }
+}

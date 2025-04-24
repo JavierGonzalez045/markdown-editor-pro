@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    --gradient-secondary: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  }
+
+  html,
+  body {
+    @apply bg-neutral-50 dark:bg-gray-900;
+    @apply text-gray-800 dark:text-gray-100;
+    @apply antialiased;
+    scroll-behavior: smooth;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .split {
+    display: flex !important;
+    flex-direction: row;
+    height: 100%;
+  }
+
+  .gutter {
+    @apply relative;
+    @apply transition-all duration-75;
+    @apply flex items-center justify-center;
+  }
+
+  .gutter.gutter-horizontal {
+    @apply bg-gray-100 dark:bg-gray-800;
+    @apply hover:bg-blue-100 dark:hover:bg-blue-900/30;
+    @apply cursor-col-resize;
+    @apply mx-1;
+    @apply w-1.5 hover:w-2;
+    @apply rounded-full;
+    @apply transition-all duration-75;
+  }
+
+  .gutter.gutter-horizontal::before {
+    content: "";
+    @apply absolute;
+    @apply top-1/2 left-1/2;
+    @apply -translate-x-1/2 -translate-y-1/2;
+    @apply h-8 w-5;
+    @apply rounded-full;
+    @apply transition-all duration-75;
+  }
+
+  .gutter.gutter-horizontal:hover::before {
+    @apply bg-blue-500/10;
+  }
+
+  .gutter.gutter-horizontal::after {
+    content: "";
+    @apply absolute;
+    @apply top-1/2 left-1/2;
+    @apply -translate-x-1/2 -translate-y-1/2;
+    @apply w-px h-12;
+    @apply bg-gray-400 dark:bg-gray-600;
+    @apply opacity-0;
+    @apply transition-opacity duration-75;
+  }
+
+  .gutter.gutter-horizontal:hover::after {
+    @apply opacity-100;
+  }
+
+  .editor-container,
+  .preview-container {
+    @apply overflow-hidden h-full;
+    @apply transition-all duration-300;
+  }
+
+  .editor-container textarea {
+    @apply outline-none h-full;
+    @apply placeholder-gray-400 dark:placeholder-gray-500;
+    @apply transition-colors duration-200;
+  }
+
+  .prose {
+    @apply max-w-none;
+  }
+
+  .prose pre {
+    @apply !bg-gray-100 dark:!bg-gray-900;
+    @apply border border-gray-200 dark:border-gray-700;
+    @apply shadow-sm;
+    @apply transition-all duration-200;
+  }
+
+  .prose pre:hover {
+    @apply shadow-md;
+  }
+
+  .prose code {
+    @apply before:content-none after:content-none;
+    @apply px-1.5 py-0.5 rounded-md;
+    @apply text-sm font-mono;
+    @apply transition-colors duration-200;
+    @apply bg-gray-100 dark:bg-gray-800;
+    @apply text-blue-600 dark:text-blue-400;
+  }
+
+  .prose a {
+    @apply text-blue-600 dark:text-blue-400;
+    @apply hover:text-blue-700 dark:hover:text-blue-300;
+    @apply transition-colors duration-200;
+    @apply underline decoration-2 decoration-blue-200 dark:decoration-blue-900;
+    @apply hover:decoration-blue-400 dark:hover:decoration-blue-600;
+  }
+
+  .prose img {
+    @apply rounded-lg shadow-sm;
+    @apply transition-transform duration-200;
+  }
+
+  .prose img:hover {
+    @apply scale-[1.02];
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-blue-500 dark:border-blue-400;
+    @apply bg-blue-50 dark:bg-blue-900/20;
+    @apply rounded-r-lg;
+    @apply py-1;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-700 rounded-full;
+    @apply hover:bg-gray-400 dark:hover:bg-gray-600;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: theme("colors.gray.300") transparent;
+  }
+
+  .dark * {
+    scrollbar-color: theme("colors.gray.700") transparent;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-lg bg-white/90 dark:bg-gray-900/80;
+    @apply border border-white/20 dark:border-gray-700/20;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-500 to-blue-700;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-200;
+    @apply hover:scale-105 active:scale-95;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+.zen-mode {
+  @apply bg-white dark:bg-gray-900;
+  @apply transition-all duration-500;
+}
+
+.zen-mode textarea {
+  @apply text-xl md:text-2xl;
+  @apply leading-relaxed;
+  @apply max-w-3xl;
+  @apply mx-auto;
+  @apply px-4 md:px-8;
+}
+
+@media (max-width: 768px) {
+  .prose {
+    @apply prose-sm;
+  }
+
+  .prose pre {
+    @apply text-sm;
+  }
+
+  .zen-mode textarea {
+    @apply text-lg;
+  }
+}
