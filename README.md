@@ -149,16 +149,20 @@ Editor de Markdown, autoguardado inteligente, previsualización instantánea y s
 2. Instala las dependencias:
 
    ```bash
-   npm install # o
-   yarn install # o
+   npm install
+   # o
+   yarn install
+   # o
    pnpm install
    ```
 
 3. Inicia el servidor de desarrollo:
 
    ```bash
-   npm run dev # o
-   yarn dev # o
+   npm run dev
+   # o
+   yarn dev
+   # o
    pnpm dev
    ```
 
